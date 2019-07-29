@@ -26,25 +26,26 @@ Read about [data alignment](https://software.intel.com/en-us/articles/data-align
 
 You might consider the ijk forms and/or matrix transpose for better performance.
 
-Write a C program to perform the multiplication of two matrices of type float. Assume square matrices.
+Write a C program to perform the multiplication of two matrices of type float. Assume square matrices so based on the following equation we can assume m and l are the same. 
 
 ![Matrix Math Graphic](https://github.com/csuchico-csci551/AutomaticVectorization/raw/master/eq21.gif "Matrix Math Graphic")
 
 
-
 Your program must be implemented in one file named mm.c and it should prompt the user and read from standard input as follows...
 
+```html
 <flag>
 <n> 
 <A>
 <B>
+```
+* flag is one of
+  * R => Random generation of matrices
+  * I => Input matrices
+* n specifies the size - each matrix is to to be n x n
+* A is an n x n matrix, input in row major order (only present if flag=I)
+* B is an n x n matrix, input in row major order (only present if flag=I) 
 
-<flag> is one of
-R => Random generation of matrices
-I => Input matrices
-<n> specifies the size - each matrix is to to be n x n
-<A> is an n x n matrix, input in row major order (only present if flag=I)
-<B> is an n x n matrix, input in row major order (only present if flag=I) 
 Your program should calculate the product AB.
 
 When generating random numbers for the matrices, be sure to seed the random number generator once using the current time. Generate floats in the range [-50 .. 50].
@@ -57,28 +58,34 @@ Examples:
 
 The following inputs say to randomly generate 4800x4800 matrices...
 
+```
 R 
 4800
+```
 
 and will produce NO output but the timing information.
 
 This form is used to enter the matrices...
 
+```
 I 
 2 
 1 3 
 2 2
 4 0 
 5 1
+```
 
 and should produce output...
 
+```
 19 3
 18 2
+```
 
 Use the Input mode to verify that your implementation is producing the correct result. Make sure you verify correctness of both the vectorized and non-vectorized code.
 
-More Details:
+## More Details:
 
 create a makefile with two targets
 mmvec - vectorized executable - compile flags: -march=core-avx2 -O2 -qopt-report=5 -qopt-report-phase=vec
