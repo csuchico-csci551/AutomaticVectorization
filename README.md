@@ -87,40 +87,39 @@ Use the Input mode to verify that your implementation is producing the correct r
 
 ## More Details:
 
-create a makefile with two targets
-mmvec - vectorized executable - compile flags: -march=core-avx2 -O2 -qopt-report=5 -qopt-report-phase=vec
-mmnovec - non-vectorized executable - compile flags: -march=core-avx2 -O2 -no-vec
-there should only be one source file - vectorization is controlled with compiler options
-use the Input mode to test both the vectorized and non-vectorized versions and verify a correct result
-use the Random mode with n = 8192 for collecting run times
-to collect timing information
-instrument the code with a single call to getrusage for RUSAGE_SELF, and print:
-user CPU time 
-convert timeval seconds plus microseconds to seconds
-eg. 1 second plus 1 microsecond = 1.000001 seconds
-system CPU time 
-convert timeval seconds plus microseconds to seconds
-maximum resident set size
-make all runs on a lab machine in OCNL 244 - you can ssh in from jaguar to o244-nn where nn is the machine number
-run each executable three times and report the sum of user and system time for all three executions, and the max resident set size
-create a report.pdf with the following
-theoretical maximum speedup due to vectorization and your reasoning
-table of actual times on three runs each for mmvec and mmnovec using n=8192, report user time, system time, and the sum
-speedup (use minimum sum of user and system time) where speedup = mmnovec-time/mmvec-time
-maximum resident set size
-discussion of your implementation and results, compiler options used and why, and especially why you may not have achieved the theoretical max speedup 
-Additional Requirements:
+* create a makefile with two targets
+  * mmvec - vectorized executable - compile flags: **-march=core-avx2 -O2 -qopt-report=5 -qopt-report-phase=vec**
+  * mmnovec - non-vectorized executable - compile flags: **-march=core-avx2 -O2 -no-vec**
+* there should only be one source file - vectorization is controlled with compiler options
+* use the Input mode to test both the vectorized and non-vectorized versions and verify a correct result
+* use the Random mode with n = 8192 for collecting run times
+* to collect timing information
+  * instrument the code with a single call to getrusage for RUSAGE_SELF, and print:
+    * user CPU time 
+      convert timeval seconds plus microseconds to seconds
+      eg. 1 second plus 1 microsecond = 1.000001 seconds
+    * system CPU time 
+      convert timeval seconds plus microseconds to seconds
+    * maximum resident set size
+  * run each executable three times and report the sum of user and system time for all three executions, and the max resident set size
+* create a report.pdf with the following
+  * theoretical maximum speedup due to vectorization and your reasoning
+  * table of actual times on three runs each for mmvec and mmnovec using n=8192, report user time, system time, and the sum
+  * speedup (use minimum sum of user and system time) where speedup = mmnovec-time/mmvec-time
+  * maximum resident set size
+  * discussion of your implementation and results, compiler options used and why, and especially why you may not have achieved the theoretical max speedup 
 
-do not use any OpenMP pragmas
-do some functional decomposition - do not code everything in main()
-vectorize whatever you can
-use the novector pragma on all loops not being vectorized for a cleaner report
-document your source - see Programming Assignment Expectations
-verify that your implementation produces a correct result, both the vectorized and non-vectorized versions
-your code must compile without errors or warnings - use -Wall -W -Werror in your makefile
-Turn-in Procedure
-add your results to the class spreadsheet - report minimum times
-create a tarball with mm.c, makefile, optimization report, and report,pdf (and nothing else)
-name your file with your last name, first initial, program number, as in challinger-j-p1.tar.gz
-submit the compressed archive file in Bb Learn
-failure to follow turn-in directions will result in a grade deduction
+## Additional Requirements:
+
+* **do not use any OpenMP or RAJA pragmas**
+* do some functional decomposition - do not code everything in main()
+* vectorize whatever you can
+* use the novector pragma on all loops not being vectorized for a cleaner report
+* document your source 
+* verify that your implementation produces a correct result, both the vectorized and non-vectorized versions
+* your code must compile without errors or warnings - use -Wall -W -Werror in your makefile
+
+## Turn-in Procedure
+* create a **tar.gz** file with your mm.c, makefile, optimization report, and report,pdf (and nothing else)
+* submit the compressed archive file in Tyson's Turnin System
+* failure to follow turn-in directions will result in a grade deduction
