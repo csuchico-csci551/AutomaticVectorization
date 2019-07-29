@@ -28,7 +28,8 @@ You might consider the ijk forms and/or matrix transpose for better performance.
 
 Write a C program to perform the multiplication of two matrices of type float. Assume square matrices.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=c_{ij}\sum_{k=1}^{n}a_{ik}*b_{kj}&space;\\&space;1$\leq$i$\leq$m,&space;1$\leq$j$\leq$l" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c_{ij}\sum_{k=1}^{n}a_{ik}*b_{kj}&space;\\&space;1$\leq$i$\leq$m,&space;1$\leq$j$\leq$l" title="c_{ij}\sum_{k=1}^{n}a_{ik}*b_{kj} \\ 1$\leq$i$\leq$m, 1$\leq$j$\leq$l" /></a>
+![Matrix Math Graphic](https://github.com/csuchico-csci551/AutomaticVectorization/raw/master/eq21.gif "Matrix Math Graphic")
+
 
 
 Your program must be implemented in one file named mm.c and it should prompt the user and read from standard input as follows...
