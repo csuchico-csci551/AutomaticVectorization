@@ -101,7 +101,8 @@ Use the Input mode to verify that your implementation is producing the correct r
     * system CPU time 
       convert timeval seconds plus microseconds to seconds
     * maximum resident set size
-  * run each executable three times and report the sum of user and system time for all three executions, and the max resident set size
+  * run each executable at least three times and report the sum of user and system time for all three executions, and the max resident set size
+    * This sample size may need to be larger if you have significant variation between the executions
 * create a report.pdf with the following
   * theoretical maximum speedup due to vectorization and your reasoning
   * table of actual times on three runs each for mmvec and mmnovec using n=8192, report user time, system time, and the sum
@@ -123,3 +124,11 @@ Use the Input mode to verify that your implementation is producing the correct r
 * create a **tar.gz** file with your mm.c, makefile, optimization report, and report,pdf (and nothing else)
 * submit the compressed archive file in Tyson's Turnin System
 * failure to follow turn-in directions will result in a grade deduction
+
+## Evaluation
+
+Grading breakdown
+30 - correct multiplication result with both mmnovec and mmvec
+20 - multiplication loop vectorized for AVX2
+20 - runtimes reported for mmnovec and mmvec
+30 - discussion - max speedup
