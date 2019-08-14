@@ -128,7 +128,7 @@ Use the Input mode to verify that your implementation is producing the correct r
 ## Evaluation
 
 Grading breakdown
-30 - correct multiplication result with both mmnovec and mmvec
-20 - multiplication loop vectorized for AVX2
-20 - runtimes reported for mmnovec and mmvec
-30 - discussion - max speedup
+* 30 - correct multiplication result with both mmnovec and mmvec
+* 20 - multiplication loop vectorized for AVX2
+* 20 - runtimes reported for mmnovec and mmvec
+* 30 - discussion - max speedup
