@@ -113,9 +113,8 @@ Use the Input mode to verify that your implementation is producing the correct r
     * This sample size may need to be larger if you have significant variation between the executions
 * create a report.pdf with the following
   * theoretical maximum speedup due to vectorization and your reasoning
-  * table of actual times on three runs each for mmvec and mmnovec using n=8192, report user time, system time, and the sum
-  * speedup (use minimum sum of user and system time) where speedup = mmnovec-time/mmvec-time
-  * maximum resident set size
+  * table of actual times on three runs each for mmvec and mmnovec using n=8192, should focus on CPU time
+  * speedup 
   * discussion of your implementation and results, compiler options used and why, and especially why you may not have achieved the theoretical max speedup 
 
 ## Additional Requirements:
