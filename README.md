@@ -88,8 +88,12 @@ Use the Input mode to verify that your implementation is producing the correct r
 ## More Details:
 
 * create a makefile with two targets
-  * mmvec - vectorized executable - compile flags: **-march=core-avx2 -O2 -qopt-report=5 -qopt-report-phase=vec**
-  * mmnovec - non-vectorized executable - compile flags: **-march=core-avx2 -O2 -no-vec**
+  * Intel Compiler:
+    * mmvec - vectorized executable - compile flags: **-march=core-avx2 -O2 -qopt-report=5 -qopt-report-phase=vec**
+    * mmnovec - non-vectorized executable - compile flags: **-march=core-avx2 -O2 -no-vec**
+  * GCC/G++ on Intel/AMD/ARM:
+    * vectorized executable
+    * non-vectoriezed executable
 * there should only be one source file - vectorization is controlled with compiler options
 * use the Input mode to test both the vectorized and non-vectorized versions and verify a correct result
 * use the Random mode with n = 8192 for collecting run times
@@ -115,13 +119,13 @@ Use the Input mode to verify that your implementation is producing the correct r
 * **do not use any OpenMP or RAJA pragmas**
 * do some functional decomposition - do not code everything in main()
 * vectorize whatever you can
-* use the novector pragma on all loops not being vectorized for a cleaner report
+* use the novector pragma on all loops not being vectorized for a cleaner report (not necessary but if it helps feel free)
 * document your source 
 * verify that your implementation produces a correct result, both the vectorized and non-vectorized versions
 * your code must compile without errors or warnings - use -Wall -W -Werror in your makefile
 
 ## Turn-in Procedure
-* create a **tar.gz** file with your mm.c, makefile, optimization report, and report,pdf (and nothing else)
+* create a **tar.gz** file with your mm.c, makefile, and report pdf (and nothing else)
 * submit the compressed archive file in Tyson's Turnin System
 * failure to follow turn-in directions will result in a grade deduction
 
