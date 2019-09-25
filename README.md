@@ -93,11 +93,15 @@ Use the Input mode to verify that your implementation is producing the correct r
     * mmnovec - non-vectorized executable - compile flags: **-march=core-avx2 -O2 -no-vec**
   * GCC/G++ on Intel/AMD/ARM:
     * vectorized executable
-    * non-vectoriezed executable
+    * non-vectorized executable
 * there should only be one source file - vectorization is controlled with compiler options
 * use the Input mode to test both the vectorized and non-vectorized versions and verify a correct result
 * use the Random mode with n = 8192 for collecting run times
 * to collect timing information
+  * Timing Options:
+    * getrusage
+    * clock (linux)
+    * benchmark library (google) demoed in class
   * instrument the code with a single call to getrusage for RUSAGE_SELF, and print:
     * user CPU time 
       convert timeval seconds plus microseconds to seconds
