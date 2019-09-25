@@ -113,7 +113,7 @@ Use the Input mode to verify that your implementation is producing the correct r
     * This sample size may need to be larger if you have significant variation between the executions
 * create a report.pdf with the following
   * theoretical maximum speedup due to vectorization and your reasoning
-  * table of actual times on three runs each for mmvec and mmnovec using n=8192, should focus on CPU time
+  * table of actual times on at least three runs, but should have enough to be statistically significant or confident in your sample size, each for vectorized and non-vectorized using n=8192, should focus on CPU time
   * speedup 
   * discussion of your implementation and results, compiler options used and why, and especially why you may not have achieved the theoretical max speedup 
 
