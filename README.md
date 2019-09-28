@@ -109,7 +109,7 @@ Use the Input mode to verify that your implementation is producing the correct r
     * system CPU time 
       convert timeval seconds plus microseconds to seconds
     * maximum resident set size
-  * run each executable at least three times and report the sum of user and system time for all three executions, and the max resident set size
+  * run each executable at least three times
     * This sample size may need to be larger if you have significant variation between the executions
 * create a report.pdf with the following
   * theoretical maximum speedup due to vectorization and your reasoning
