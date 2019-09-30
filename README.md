@@ -90,7 +90,7 @@ Use the Input mode to verify that your implementation is producing the correct r
 * create a makefile with two targets
   * Intel Compiler:
     * mmvec - vectorized executable - compile flags: **-march=core-avx2 -O2 -qopt-report=5 -qopt-report-phase=vec**
-    * mmnovec - non-vectorized executable - compile flags: **-march=core-avx2 -O2 -no-vec**
+    * mmnovec - non-vectorized executable - compile flags: **-march=core-avx2 -no-vec**
   * GCC/G++ on Intel/AMD/ARM:
     * vectorized executable
     * non-vectorized executable
